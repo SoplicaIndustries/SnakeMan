@@ -25,14 +25,14 @@ namespace SnakeMan
             int xPos = randomPos.Next(0,boardWidth);
             int yPos = randomPos.Next(0, boardHeight);
 
-            if (counter % 10 == 0)
+            if ((counter % 10) == 0)
             {
-                Fruit = Fruits_List.GetList()[randomFruit.Next(0, Fruits_List.GetList().Count())];
+                Fruit = Fruits_List.GetList()[randomFruit.Next(1, Fruits_List.GetList().Count())];
             }
 
             else
             {
-                Fruit = Fruits_List.GetList()[randomFruit.Next(0, 0)];
+                Fruit = Fruits_List.GetList()[0];
             }
 
             board.Controls.Add(Fruit, xPos, yPos);

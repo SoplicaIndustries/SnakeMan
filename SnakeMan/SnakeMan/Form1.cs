@@ -14,7 +14,7 @@ namespace SnakeMan
 
     public partial class Form1 : Form
     {
-        public int FruitCounter { get; set; } = 0;
+        public int FruitCounter { get; set; } = 1;
         public string Direction { get; set; }
         public Form1()
         {
@@ -74,8 +74,9 @@ namespace SnakeMan
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
             FruitGenerator.FGen(board, FruitCounter);
+            FruitCounter++;
         }
     }
 
