@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using System.Diagnostics;
 
 namespace SnakeMan
 {
@@ -46,6 +47,11 @@ namespace SnakeMan
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/SoplicaIndustries");
         }
     }
 }

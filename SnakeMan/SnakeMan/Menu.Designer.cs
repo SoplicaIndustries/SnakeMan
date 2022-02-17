@@ -36,6 +36,8 @@
             this.Hard = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,6 +72,7 @@
             // Easy
             // 
             this.Easy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Easy.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Easy.Location = new System.Drawing.Point(3, 3);
             this.Easy.Name = "Easy";
             this.Easy.Size = new System.Drawing.Size(159, 94);
@@ -81,6 +84,7 @@
             // Normal
             // 
             this.Normal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Normal.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F);
             this.Normal.Location = new System.Drawing.Point(168, 3);
             this.Normal.Name = "Normal";
             this.Normal.Size = new System.Drawing.Size(159, 94);
@@ -92,6 +96,7 @@
             // Hard
             // 
             this.Hard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Hard.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F);
             this.Hard.Location = new System.Drawing.Point(333, 3);
             this.Hard.Name = "Hard";
             this.Hard.Size = new System.Drawing.Size(161, 94);
@@ -119,11 +124,33 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(136, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 183);
             this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Powered by: Soplica Industries 2020";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(454, 138);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Menu
             // 
@@ -140,6 +167,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +182,7 @@
         private System.Windows.Forms.Button Hard;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }
