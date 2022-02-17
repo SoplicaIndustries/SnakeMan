@@ -12,7 +12,7 @@ namespace SnakeMan
     {
        
         
-        public static void FGen(TableLayoutPanel board, int counter)
+        public static Panel FGen(TableLayoutPanel board, int counter)
         {
             int boardWidth = board.ColumnCount;
             int boardHeight = board.RowCount;
@@ -36,6 +36,7 @@ namespace SnakeMan
             }
 
             board.Controls.Add(Fruit, xPos, yPos);
+            return Fruit;
 
 
         }

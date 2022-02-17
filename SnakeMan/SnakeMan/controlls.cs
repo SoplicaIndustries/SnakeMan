@@ -51,11 +51,44 @@ namespace SnakeMan
             var boardWidth = board.ColumnCount;
             var boardHeight = board.RowCount;
 
-            if(Math.Abs(currentPosition.Column) > Math.Abs(boardWidth-1) || Math.Abs(currentPosition.Row) > Math.Abs(boardHeight-1) || currentPosition.Column < 0 || currentPosition.Row < 0 )
+            if (Math.Abs(currentPosition.Column) > Math.Abs(boardWidth - 1) || Math.Abs(currentPosition.Row) > Math.Abs(boardHeight - 1) || currentPosition.Column < 0 || currentPosition.Row < 0)
             {
                 return true;
             }
-            
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool FruitCollision(Panel snake,TableLayoutPanel board, Panel fruit, string direction)
+        {
+            if (fruit != null)
+            {
+                var snakePos = board.GetCellPosition(snake);
+                var fruitPos = board.GetCellPosition(fruit);
+
+                if (snakePos.Column == (fruitPos.Column-1) && snakePos.Row == fruitPos.Row && direction =="right")
+                {
+                    return true;
+                }
+                else if (snakePos.Column == (fruitPos.Column + 1) && snakePos.Row == fruitPos.Row && direction == "left")
+                {
+                    return true;
+                }
+
+                else if (snakePos.Column == fruitPos.Column && snakePos.Row == (fruitPos.Row-1) && direction == "down")
+                {
+                    return true;
+                }
+                else if (snakePos.Column == fruitPos.Column && snakePos.Row == (fruitPos.Row + 1) && direction == "up")
+                {
+                    return true;
+                }
+
+                else return false;
+            }
             return false;
         }
 

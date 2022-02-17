@@ -14,16 +14,20 @@ namespace SnakeMan
 
     public partial class Form1 : Form
     {
-        public int FruitCounter { get; set; } = 1;
         public string Direction { get; set; }
+        public int FruitCounter { get; set; } = 1;
+
+        public Panel CurrentFruit { get; set; }
         public Form1()
         {
             InitializeComponent();
             ticker.Enabled = true;
             ticker.Interval = 100;
             Direction = "up";
+            button1.TabStop = false;
+            CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
 
-           
+
 
         }
 
@@ -37,7 +41,12 @@ namespace SnakeMan
                 controlls.Movement(snake, board, Direction);
             }
             else
-            {
+            {   if(controlls.FruitCollision(snake, board, CurrentFruit, Direction))
+                {
+                    board.Controls.Remove(CurrentFruit);
+                    CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
+                    FruitCounter++;
+                }
                 controlls.Movement(snake, board, Direction);
             }
         }
@@ -49,19 +58,19 @@ namespace SnakeMan
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Down)
+            if(e.KeyCode == Keys.S)
             {
                 Direction = "down";
             }
-            else if (e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.W)
             {
                 Direction = "up";
             }
-            else if (e.KeyCode == Keys.Right)
+            else if (e.KeyCode == Keys.D)
             {
                 Direction = "right";
             }
-            else if (e.KeyCode == Keys.Left)
+            else if (e.KeyCode == Keys.A)
             {
                 Direction = "left";
             }
@@ -72,11 +81,13 @@ namespace SnakeMan
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            
-            FruitGenerator.FGen(board, FruitCounter);
+            CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
             FruitCounter++;
+            this.ActiveControl = null;
         }
     }
 
