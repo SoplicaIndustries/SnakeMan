@@ -44,7 +44,7 @@ namespace SnakeMan
             }
         }
 
-        public static bool Collision(Panel snake, TableLayoutPanel board)
+        public static bool BoardCollision(Panel snake, TableLayoutPanel board)
         {
             var currentPosition = board.GetCellPosition(snake);
 

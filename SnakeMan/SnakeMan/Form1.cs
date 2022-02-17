@@ -14,6 +14,7 @@ namespace SnakeMan
 
     public partial class Form1 : Form
     {
+        public int FruitCounter { get; set; } = 0;
         public string Direction { get; set; }
         public Form1()
         {
@@ -21,6 +22,7 @@ namespace SnakeMan
             ticker.Enabled = true;
             ticker.Interval = 100;
             Direction = "up";
+
            
 
         }
@@ -28,7 +30,7 @@ namespace SnakeMan
         private void ticker_Tick(object sender, EventArgs e)
         {
             
-            if(controlls.Collision(snake, board))
+            if(controlls.BoardCollision(snake, board))
             {
                 label2.Text = "you lost";
                 Direction = "clear";
@@ -70,7 +72,11 @@ namespace SnakeMan
            
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            FruitGenerator.FGen(board, FruitCounter);
+        }
     }
 
     
