@@ -42,6 +42,7 @@ namespace SnakeMan
         private void Hard_Click(object sender, EventArgs e)
         {
             new Form1("hard").ShowDialog();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,6 +53,16 @@ namespace SnakeMan
         private void button1_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/SoplicaIndustries");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Rules().ShowDialog();
         }
     }
 }
