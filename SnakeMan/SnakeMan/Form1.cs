@@ -39,6 +39,7 @@ namespace SnakeMan
                 label2.Text = "you lost";
                 Direction = "clear";
                 controlls.Movement(snake, board, Direction);
+                FruitCounter = 1;
             }
             else
             {   if(controlls.FruitCollision(snake, board, CurrentFruit, Direction))
