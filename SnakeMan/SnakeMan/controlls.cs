@@ -168,14 +168,48 @@ namespace SnakeMan
                 board.SetCellPosition(tail, UpdateTail);
                 PreviousTailX = tailpos.Column;
                 PreviousTailY = tailpos.Row;
+            }  
+        }
+
+        public static bool TailCollision(Panel snake,TableLayoutPanel board, List<Panel> tails, string direction)
+        {
+            if (tails != null)
+            {
+                foreach (var tail in tails) {
+                    var snakePos = board.GetCellPosition(snake);
+                    var tailPos = board.GetCellPosition(tail);
+
+                    if (snakePos.Column == (tailPos.Column - 1) && snakePos.Row == tailPos.Row && direction == "right")
+                    {
+                        return true;
+                    }
+                    else if (snakePos.Column == (tailPos.Column + 1) && snakePos.Row == tailPos.Row && direction == "left")
+                    {
+                        return true;
+                    }
+
+                    else if (snakePos.Column == tailPos.Column && snakePos.Row == (tailPos.Row - 1) && direction == "down")
+                    {
+                        return true;
+                    }
+                    else if (snakePos.Column == tailPos.Column && snakePos.Row == (tailPos.Row + 1) && direction == "up")
+                    {
+                        return true;
+                    }
+                    
+                }
+
+                return false;
+
+                
             }
 
-            
 
-         
 
-            
+            return false;
         }
+
+       
 
        
 

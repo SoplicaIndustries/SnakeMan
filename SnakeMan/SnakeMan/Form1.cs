@@ -44,12 +44,13 @@ namespace SnakeMan
         private void ticker_Tick(object sender, EventArgs e)
         {
             
-            if(controlls.BoardCollision(snake, board))
+            if(controlls.BoardCollision(snake, board) || controlls.TailCollision(snake, board, Tail, Direction))
             {
                 label2.Text = "you lost";
                 Direction = "clear";
                 controlls.Movement(snake, board, Direction);
                 FruitCounter = 1;
+               
             }
             else
             {   if(controlls.FruitCollision(snake, board, CurrentFruit, Direction))
@@ -110,6 +111,8 @@ namespace SnakeMan
             FruitCounter++;
             this.ActiveControl = null;
         }
+
+        
 
         
     }
