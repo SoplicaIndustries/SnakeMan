@@ -1,0 +1,11 @@
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\bin\Debug\SnakeMan.exe.config
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\bin\Debug\SnakeMan.exe
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\bin\Debug\SnakeMan.pdb
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.AssemblyReference.cache
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.SuggestedBindingRedirects.cache
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Form1.resources
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Properties.Resources.resources
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.GenerateResource.cache
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.CoreCompileInputs.cache
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.exe
+C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\SnakeMan.pdb
