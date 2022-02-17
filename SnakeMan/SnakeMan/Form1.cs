@@ -50,6 +50,12 @@ namespace SnakeMan
                 Direction = "clear";
                 controlls.Movement(snake, board, Direction);
                 FruitCounter = 1;
+                TailCounter = 0;
+                for(int i = 0; i < Tail.Count; i++)
+                {
+                    board.Controls.Remove(Tail[i]);
+                }
+                Tail.Clear();
                
             }
             else

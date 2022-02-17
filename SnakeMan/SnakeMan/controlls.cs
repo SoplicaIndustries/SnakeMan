@@ -179,20 +179,20 @@ namespace SnakeMan
                     var snakePos = board.GetCellPosition(snake);
                     var tailPos = board.GetCellPosition(tail);
 
-                    if (snakePos.Column == (tailPos.Column - 1) && snakePos.Row == tailPos.Row && direction == "right")
+                    if (snakePos.Column == (tailPos.Column) && snakePos.Row == tailPos.Row && direction == "right")
                     {
                         return true;
                     }
-                    else if (snakePos.Column == (tailPos.Column + 1) && snakePos.Row == tailPos.Row && direction == "left")
+                    else if (snakePos.Column == (tailPos.Column) && snakePos.Row == tailPos.Row && direction == "left")
                     {
                         return true;
                     }
 
-                    else if (snakePos.Column == tailPos.Column && snakePos.Row == (tailPos.Row - 1) && direction == "down")
+                    else if (snakePos.Column == tailPos.Column && snakePos.Row == (tailPos.Row) && direction == "down")
                     {
                         return true;
                     }
-                    else if (snakePos.Column == tailPos.Column && snakePos.Row == (tailPos.Row + 1) && direction == "up")
+                    else if (snakePos.Column == tailPos.Column && snakePos.Row == (tailPos.Row) && direction == "up")
                     {
                         return true;
                     }
