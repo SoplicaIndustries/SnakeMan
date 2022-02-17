@@ -135,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 165);
+            this.label2.Location = new System.Drawing.Point(165, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 13);
             this.label2.TabIndex = 4;
@@ -145,7 +145,7 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(454, 138);
+            this.button1.Location = new System.Drawing.Point(454, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 5;

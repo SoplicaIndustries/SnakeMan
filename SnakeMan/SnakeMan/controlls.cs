@@ -65,15 +65,31 @@ namespace SnakeMan
             }
             else if (direction == "right")
             {
-                UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column + 1, currentPosition.Row);
-                board.SetCellPosition(snake, UpdateSnake);
-                PreviousDirection = direction;
+                if (PreviousDirection == "left")
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column - 1, currentPosition.Row);
+                    board.SetCellPosition(snake, UpdateSnake);
+                }
+                else
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column + 1, currentPosition.Row);
+                    board.SetCellPosition(snake, UpdateSnake);
+                    PreviousDirection = direction;
+                }
             }
             else if (direction == "left")
             {
-                UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column - 1, currentPosition.Row);
-                board.SetCellPosition(snake, UpdateSnake);
-                PreviousDirection = direction;
+                if (PreviousDirection == "right")
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column + 1, currentPosition.Row);
+                    board.SetCellPosition(snake, UpdateSnake);
+                }
+                else
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column - 1, currentPosition.Row);
+                    board.SetCellPosition(snake, UpdateSnake);
+                    PreviousDirection = direction;
+                }
             }
             else if(direction == "clear")
             {
