@@ -12,7 +12,6 @@ C:\Users\rogoz\OneDrive\Pulpit\folders\szkolne\c#\SnakeMan\SnakeMan\obj\Debug\Sn
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\SnakeMan.exe.config
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\SnakeMan.exe
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\SnakeMan.pdb
-C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.AssemblyReference.cache
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.SuggestedBindingRedirects.cache
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Form1.resources
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Properties.Resources.resources

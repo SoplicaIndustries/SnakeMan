@@ -22,12 +22,25 @@ namespace SnakeMan
         public Panel CurrentFruit { get; set; }
 
         public List<Panel> Tail;
-        public Form1()
+        public Form1(string difficulty)
         {
             InitializeComponent();
             //tick settings
+            if (difficulty == "easy")
+            {
+                ticker.Interval = 400;
+            }
+            else if (difficulty == "normal")
+            {
+                ticker.Interval = 100;
+            }
+            else if (difficulty == "hard")
+            {
+                ticker.Interval = 50;
+            }
             ticker.Enabled = true;
-            ticker.Interval = 150;
+
+
 
             //start settings
             Direction = "up";

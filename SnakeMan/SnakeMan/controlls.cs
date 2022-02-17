@@ -11,7 +11,7 @@ namespace SnakeMan
     {
         public static int PreviousX { get; set; }
         public static int PreviousY { get; set; }
-
+        public static string PreviousDirection { get; set; } = "up";
         public static int PreviousTailX { get; set; }
         public static int PreviousTailY { get; set; }
 
@@ -23,7 +23,7 @@ namespace SnakeMan
             
                 PreviousX = currentPosition.Column;
                 PreviousY = currentPosition.Row;
-            
+                
             
                
             
@@ -34,24 +34,46 @@ namespace SnakeMan
 
             if (direction == "up")
             {
-                UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row - 1);
-                board.SetCellPosition(snake, UpdateSnake);
+                if (PreviousDirection == "down")
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row + 1);
+                    board.SetCellPosition(snake, UpdateSnake);
+                }
+                else
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row - 1);
+                    board.SetCellPosition(snake, UpdateSnake);
+                    PreviousDirection = direction;
+                }
+                
+
 
             }
             else if (direction == "down")
             {
-                UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row + 1);
-                board.SetCellPosition(snake, UpdateSnake);
+                if (PreviousDirection == "up")
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row - 1);
+                    board.SetCellPosition(snake, UpdateSnake);
+                }
+                else
+                {
+                    UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row + 1);
+                    board.SetCellPosition(snake, UpdateSnake);
+                    PreviousDirection = direction;
+                }
             }
             else if (direction == "right")
             {
                 UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column + 1, currentPosition.Row);
                 board.SetCellPosition(snake, UpdateSnake);
+                PreviousDirection = direction;
             }
             else if (direction == "left")
             {
                 UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column - 1, currentPosition.Row);
                 board.SetCellPosition(snake, UpdateSnake);
+                PreviousDirection = direction;
             }
             else if(direction == "clear")
             {

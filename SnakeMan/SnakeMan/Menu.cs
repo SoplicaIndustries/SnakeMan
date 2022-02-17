@@ -30,18 +30,18 @@ namespace SnakeMan
         }
         private void Easy_Click(object sender, EventArgs e)
         {
-
+            new Form1("easy").ShowDialog();
         }
 
         private void Normal_Click(object sender, EventArgs e)
         {
-
+            new Form1("normal").ShowDialog();
         }
 
 
         private void Hard_Click(object sender, EventArgs e)
         {
-
+            new Form1("hard").ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
