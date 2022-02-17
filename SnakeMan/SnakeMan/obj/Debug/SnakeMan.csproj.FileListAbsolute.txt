@@ -20,3 +20,4 @@ C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.GenerateResource.c
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.CoreCompileInputs.cache
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.exe
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.pdb
+C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Menu.resources
