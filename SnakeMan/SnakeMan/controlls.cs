@@ -9,18 +9,34 @@ namespace SnakeMan
 {
     class controlls
     {
-        
+        public static int PreviousX { get; set; }
+        public static int PreviousY { get; set; }
+
+        public static int PreviousTailX { get; set; }
+        public static int PreviousTailY { get; set; }
+
         public static void Movement(Panel snake, TableLayoutPanel board, string direction)
         {
             
             var currentPosition = board.GetCellPosition(snake);
+
+            
+                PreviousX = currentPosition.Column;
+                PreviousY = currentPosition.Row;
+            
+            
+               
+            
+
             TableLayoutPanelCellPosition UpdateSnake;
+            
 
 
             if (direction == "up")
             {
                 UpdateSnake = new TableLayoutPanelCellPosition(currentPosition.Column, currentPosition.Row - 1);
                 board.SetCellPosition(snake, UpdateSnake);
+
             }
             else if (direction == "down")
             {
@@ -91,6 +107,77 @@ namespace SnakeMan
             }
             return false;
         }
+
+        public static void TailHandler(Panel snake, TableLayoutPanel board, int tailCounter, List<Panel> Tail, string direction)
+        {
+            //Getting pos
+            var snakePos = board.GetCellPosition(snake);
+            var snakeX = snakePos.Column;
+            var snakeY = snakePos.Row;
+
+            //Setting pos
+            int tailX = 0;
+            int tailY = 0;
+            if (direction == "right")
+            {
+                tailX = snakePos.Column-1;
+                tailY = snakePos.Row;
+            }
+            else if(direction == "left")
+            {
+                tailX = snakePos.Column + 1;
+                tailY = snakePos.Row;
+            }
+            else if (direction == "up")
+            {
+                tailX = snakePos.Column;
+                tailY = snakePos.Row + 1;
+            }
+            else if (direction == "down")
+            {
+                tailX = snakePos.Column;
+                tailY = snakePos.Row - 1;
+            }
+
+
+            //adding tail element
+            Tail.Add(new Panel { Name = tailCounter.ToString(), BackColor = System.Drawing.Color.Black });
+            board.Controls.Add(Tail[tailCounter], tailX, tailY);
+            
+        }
+
+        public static void TailMovement(Panel tail,Panel snake, TableLayoutPanel board, string direction, int count)
+        {
+            var snakepos = board.GetCellPosition(snake);
+            var tailpos = board.GetCellPosition(tail);
+
+           
+
+            TableLayoutPanelCellPosition UpdateTail;
+            if (count == 0)
+            {
+                PreviousTailX = tailpos.Column;
+                PreviousTailY = tailpos.Row;
+                UpdateTail = new TableLayoutPanelCellPosition(PreviousX, PreviousY);
+                board.SetCellPosition(tail, UpdateTail);
+               
+            }
+            else
+            {
+                UpdateTail = new TableLayoutPanelCellPosition(PreviousTailX, PreviousTailY);
+                board.SetCellPosition(tail, UpdateTail);
+                PreviousTailX = tailpos.Column;
+                PreviousTailY = tailpos.Row;
+            }
+
+            
+
+         
+
+            
+        }
+
+       
 
        
     }

@@ -17,14 +17,24 @@ namespace SnakeMan
         public string Direction { get; set; }
         public int FruitCounter { get; set; } = 1;
 
+        public int TailCounter { get; set; } = 0;   
+
         public Panel CurrentFruit { get; set; }
+
+        public List<Panel> Tail;
         public Form1()
         {
             InitializeComponent();
+            //tick settings
             ticker.Enabled = true;
-            ticker.Interval = 100;
+            ticker.Interval = 150;
+
+            //start settings
             Direction = "up";
             button1.TabStop = false;
+            Tail = new List<Panel>();
+
+            //fisrt fruit generation
             CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
 
 
@@ -44,11 +54,21 @@ namespace SnakeMan
             else
             {   if(controlls.FruitCollision(snake, board, CurrentFruit, Direction))
                 {
+                    //fruit handler
                     board.Controls.Remove(CurrentFruit);
                     CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
                     FruitCounter++;
+
+                    //tail handler
+                    controlls.TailHandler(snake, board, TailCounter, Tail, Direction);
+                    TailCounter++;
                 }
                 controlls.Movement(snake, board, Direction);
+                for(int i = 0; i< Tail.Count; i++)
+                {
+                    controlls.TailMovement(Tail[i],snake,board, Direction, i);
+                    
+                }
             }
         }
 
@@ -90,6 +110,8 @@ namespace SnakeMan
             FruitCounter++;
             this.ActiveControl = null;
         }
+
+        
     }
 
     
