@@ -12,7 +12,7 @@ namespace SnakeMan
     {
        
         
-        public static Panel FGen(Panel snake, TableLayoutPanel board, int counter)
+        public static Panel FGen(Panel snake, TableLayoutPanel board, List<Panel> Tail, int counter)
         {
             int boardWidth = board.ColumnCount;
             int boardHeight = board.RowCount;
@@ -33,6 +33,18 @@ namespace SnakeMan
             {
                 xPos = randomPos.Next(0, boardWidth);
                 yPos = randomPos.Next(0, boardHeight);
+            }
+            for(int i = 0; i < Tail.Count(); i++)
+            {
+                var tailPos = board.GetCellPosition(Tail[i]);
+                int tailX = tailPos.Column;
+                int tailY = tailPos.Row;
+
+                while(xPos == tailX && yPos == tailY)
+                {
+                    xPos = randomPos.Next(0, boardWidth);
+                    yPos = randomPos.Next(0, boardHeight);
+                }
             }
             
             

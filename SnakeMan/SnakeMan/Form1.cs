@@ -64,7 +64,7 @@ namespace SnakeMan
 
 
             //fisrt fruit generation
-            CurrentFruit = FruitGenerator.FGen(snake,board, FruitCounter);
+            CurrentFruit = FruitGenerator.FGen(snake, board, Tail, FruitCounter) ;
 
 
 
@@ -87,7 +87,7 @@ namespace SnakeMan
                 Tail.Clear();
                 board.Controls.Remove(CurrentFruit);
                 CurrentFruit = null;
-                CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
+                CurrentFruit = FruitGenerator.FGen(snake, board,Tail, FruitCounter);
 
                 ScoreCounter = 0;
                 CurrentScore.Text = ScoreCounter.ToString();
@@ -98,7 +98,7 @@ namespace SnakeMan
                 {
                     //fruit handler
                     board.Controls.Remove(CurrentFruit);
-                    CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
+                    CurrentFruit = FruitGenerator.FGen(snake, board,Tail, FruitCounter);
                     FruitCounter++;
 
                     //score handler
