@@ -9,9 +9,23 @@ namespace SnakeMan
 {
     internal class FruitEvent
     {
-        public static void FruitEventHandler(Panel snake,TableLayoutPanel board, string direction, string fruitName)
+        public static void FruitEventHandler(Panel snake, TableLayoutPanel board, int tailCounter, List<Panel> Tail, string direction, string fruitName)
         {
+            if(fruitName == "Apple")
+            {
+                TailHandler(snake, board, Form1.TailCounter, Tail, direction);
+                Form1.TailCounter++;
+            }
+            if(fruitName == "Gomu-Gomu")
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    TailHandler(snake, board, Form1.TailCounter, Tail, direction);
+                    Form1.TailCounter++;
+                }
+                
 
+            }
         }
 
         public static void TailHandler(Panel snake, TableLayoutPanel board, int tailCounter, List<Panel> Tail, string direction)

@@ -17,7 +17,7 @@ namespace SnakeMan
         public string Direction { get; set; }
         public int FruitCounter { get; set; } = 1;
 
-        public int TailCounter { get; set; } = 0;   
+        public static int TailCounter { get; set; } = 0;   
 
         public Panel CurrentFruit { get; set; }
 
@@ -81,8 +81,8 @@ namespace SnakeMan
 
                     //buff handler
 
-                    FruitEvent.TailHandler(snake, board, TailCounter, Tail, Direction);
-                    TailCounter++;
+                    FruitEvent.FruitEventHandler(snake, board, TailCounter, Tail, Direction, CurrentFruit.Name);
+                    
                 }
                 controlls.Movement(snake, board, Direction);
                 for(int i = 0; i< Tail.Count; i++)
@@ -127,9 +127,7 @@ namespace SnakeMan
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
-            FruitCounter++;
-            this.ActiveControl = null;
+            ticker.Interval = 1000;
         }
 
         
