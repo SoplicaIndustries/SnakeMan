@@ -35,9 +35,6 @@ namespace SnakeMan
                 yPos = randomPos.Next(0, boardHeight);
             }
             
-
-
-
             if ((counter % 10) == 0)
             {
                 Fruit = Fruits_List.GetList()[randomFruit.Next(1, Fruits_List.GetList().Count())];
