@@ -41,30 +41,53 @@ namespace SnakeMan
 
             if(Tail.Count > 0)
             {
-                tailX = controlls.PreviousTailX;
-                tailY = controlls.PreviousTailY;
+                if (direction == "right")
+                {
+                    tailX = controlls.PreviousTailX - 1;
+                    tailY = controlls.PreviousTailY;
+                }
+                else if (direction == "left")
+                {
+                    tailX = controlls.PreviousTailX + 1;
+                    tailY = controlls.PreviousTailY;
+                }
+                else if (direction == "up")
+                {
+                    tailX = controlls.PreviousTailX;
+                    tailY = controlls.PreviousTailY + 1;
+                }
+                else if (direction == "down")
+                {
+                    tailX = controlls.PreviousTailX;
+                    tailY = controlls.PreviousTailY - 1;
+                }
 
             }
-            if (direction == "right")
+            else
             {
-                tailX = snakePos.Column - 1;
-                tailY = snakePos.Row;
+                if (direction == "right")
+                {
+                    tailX = snakePos.Column - 1;
+                    tailY = snakePos.Row;
+                }
+                else if (direction == "left")
+                {
+                    tailX = snakePos.Column + 1;
+                    tailY = snakePos.Row;
+                }
+                else if (direction == "up")
+                {
+                    tailX = snakePos.Column;
+                    tailY = snakePos.Row + 1;
+                }
+                else if (direction == "down")
+                {
+                    tailX = snakePos.Column;
+                    tailY = snakePos.Row - 1;
+                }
+
             }
-            else if (direction == "left")
-            {
-                tailX = snakePos.Column + 1;
-                tailY = snakePos.Row;
-            }
-            else if (direction == "up")
-            {
-                tailX = snakePos.Column;
-                tailY = snakePos.Row + 1;
-            }
-            else if (direction == "down")
-            {
-                tailX = snakePos.Column;
-                tailY = snakePos.Row - 1;
-            }
+            
 
 
             //adding tail element

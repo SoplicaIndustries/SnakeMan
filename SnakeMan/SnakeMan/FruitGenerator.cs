@@ -35,7 +35,7 @@ namespace SnakeMan
                 yPos = randomPos.Next(0, boardHeight);
             }
             
-            /* NORMAL
+            
             if ((counter % 10) == 0)
             {
                 Fruit = Fruits_List.GetList()[randomFruit.Next(1, Fruits_List.GetList().Count())];
@@ -43,12 +43,12 @@ namespace SnakeMan
 
             else
             {
-                Fruit = Fruits_List.GetList()[1];
+                Fruit = Fruits_List.GetList()[0];
             }
-            */
+            
 
             //DEBUG
-            Fruit = Fruits_List.GetList()[1];
+            //Fruit = Fruits_List.GetList()[1];
 
             board.Controls.Add(Fruit, xPos, yPos);
             return Fruit;
