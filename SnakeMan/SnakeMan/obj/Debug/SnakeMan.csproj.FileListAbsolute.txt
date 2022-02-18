@@ -21,3 +21,4 @@ C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.exe
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.pdb
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Menu.resources
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Rules.resources
+C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.AssemblyReference.cache

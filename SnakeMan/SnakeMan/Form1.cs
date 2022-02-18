@@ -48,7 +48,7 @@ namespace SnakeMan
             Tail = new List<Panel>();
 
             //fisrt fruit generation
-            CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
+            CurrentFruit = FruitGenerator.FGen(snake,board, FruitCounter);
 
 
 
@@ -76,7 +76,7 @@ namespace SnakeMan
                 {
                     //fruit handler
                     board.Controls.Remove(CurrentFruit);
-                    CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
+                    CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
                     FruitCounter++;
 
                     //tail handler
@@ -126,7 +126,7 @@ namespace SnakeMan
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            CurrentFruit = FruitGenerator.FGen(board, FruitCounter);
+            CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
             FruitCounter++;
             this.ActiveControl = null;
         }

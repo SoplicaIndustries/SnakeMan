@@ -12,18 +12,31 @@ namespace SnakeMan
     {
        
         
-        public static Panel FGen(TableLayoutPanel board, int counter)
+        public static Panel FGen(Panel snake, TableLayoutPanel board, int counter)
         {
             int boardWidth = board.ColumnCount;
             int boardHeight = board.RowCount;
+
+            var snakePos = board.GetCellPosition(snake);
+            int snakeX = snakePos.Column;
+            int snakeY = snakePos.Row;  
 
             Random randomPos = new Random();
             Random randomFruit = new Random();
 
             Panel Fruit;
 
-            int xPos = randomPos.Next(0,boardWidth);
+            int xPos = randomPos.Next(0, boardWidth);
             int yPos = randomPos.Next(0, boardHeight);
+
+            while (xPos == snakeX && yPos == snakeY)
+            {
+                xPos = randomPos.Next(0, boardWidth);
+                yPos = randomPos.Next(0, boardHeight);
+            }
+            
+
+
 
             if ((counter % 10) == 0)
             {
