@@ -16,9 +16,9 @@ namespace SnakeMan
     {
         public string Direction { get; set; }
         public int FruitCounter { get; set; } = 1;
-
-        public static int TailCounter { get; set; } = 0;   
-
+        public static int TailCounter { get; set; } = 0;
+        public int ScoreCounter { get; set; } = 0;
+        public int BestScoreCounter { get; set; } = 0;
         public Panel CurrentFruit { get; set; }
 
         public List<Panel> Tail;
@@ -40,12 +40,16 @@ namespace SnakeMan
             }
             ticker.Enabled = true;
 
-
-
             //start settings
             Direction = "up";
             button1.TabStop = false;
+            btnStart.TabStop = false;
             Tail = new List<Panel>();
+            ScoreCounter = 0;
+            CurrentScore.Text = ScoreCounter.ToString();
+            BestScoreCounter = Saves.ReadBestScore();
+            BestScoreContainer.Text = BestScoreCounter.ToString();
+
 
             //fisrt fruit generation
             CurrentFruit = FruitGenerator.FGen(snake,board, FruitCounter);
@@ -59,7 +63,7 @@ namespace SnakeMan
             
             if(controlls.BoardCollision(snake, board) || controlls.TailCollision(snake, board, Tail, Direction))
             {
-                label2.Text = "you lost";
+                lbScore.Text = "you lost";
                 Direction = "clear";
                 controlls.Movement(snake, board, Direction);
                 FruitCounter = 1;
@@ -69,6 +73,9 @@ namespace SnakeMan
                     board.Controls.Remove(Tail[i]);
                 }
                 Tail.Clear();
+
+                ScoreCounter = 0;
+            CurrentScore.Text = ScoreCounter.ToString();
                
             }
             else
@@ -79,8 +86,17 @@ namespace SnakeMan
                     CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
                     FruitCounter++;
 
-                    //buff handler
+                    //score handler
+                    ScoreCounter++;
+                    CurrentScore.Text = ScoreCounter.ToString();
+                    if(ScoreCounter > BestScoreCounter)
+                    {
+                        BestScoreCounter = ScoreCounter;
+                        BestScoreContainer.Text = ScoreCounter.ToString();
+                        Saves.SaveBestScore(BestScoreCounter);
+                    }
 
+                    //buff handler
                     FruitEvent.FruitEventHandler(snake, board, TailCounter, Tail, Direction, CurrentFruit.Name);
                     
                 }

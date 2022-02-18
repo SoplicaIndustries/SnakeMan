@@ -34,8 +34,15 @@
             this.snake = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ticker = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbDifficulty = new System.Windows.Forms.Label();
+            this.lbCurrentFruit = new System.Windows.Forms.Label();
+            this.lbFruitDescription = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.lbScore = new System.Windows.Forms.Label();
+            this.lbBestScore = new System.Windows.Forms.Label();
+            this.BestScoreContainer = new System.Windows.Forms.Label();
+            this.CurrentScore = new System.Windows.Forms.Label();
             this.board.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +77,7 @@
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.board.Controls.Add(this.label1, 0, 0);
             this.board.Controls.Add(this.snake, 9, 9);
-            this.board.Location = new System.Drawing.Point(199, 94);
+            this.board.Location = new System.Drawing.Point(255, 85);
             this.board.Name = "board";
             this.board.RowCount = 20;
             this.board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -130,18 +137,9 @@
             // 
             this.ticker.Tick += new System.EventHandler(this.ticker_Tick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(403, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "playing";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(742, 53);
+            this.button1.Location = new System.Drawing.Point(817, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -149,13 +147,107 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // lbDifficulty
+            // 
+            this.lbDifficulty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbDifficulty.AutoSize = true;
+            this.lbDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDifficulty.Location = new System.Drawing.Point(3, 90);
+            this.lbDifficulty.MinimumSize = new System.Drawing.Size(200, 50);
+            this.lbDifficulty.Name = "lbDifficulty";
+            this.lbDifficulty.Size = new System.Drawing.Size(200, 50);
+            this.lbDifficulty.TabIndex = 4;
+            this.lbDifficulty.Text = "Difficulty: ";
+            // 
+            // lbCurrentFruit
+            // 
+            this.lbCurrentFruit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbCurrentFruit.AutoSize = true;
+            this.lbCurrentFruit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCurrentFruit.Location = new System.Drawing.Point(3, 140);
+            this.lbCurrentFruit.MinimumSize = new System.Drawing.Size(200, 50);
+            this.lbCurrentFruit.Name = "lbCurrentFruit";
+            this.lbCurrentFruit.Size = new System.Drawing.Size(200, 50);
+            this.lbCurrentFruit.TabIndex = 5;
+            this.lbCurrentFruit.Text = "Current Fruit: ";
+            // 
+            // lbFruitDescription
+            // 
+            this.lbFruitDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbFruitDescription.AutoSize = true;
+            this.lbFruitDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFruitDescription.Location = new System.Drawing.Point(3, 202);
+            this.lbFruitDescription.MinimumSize = new System.Drawing.Size(200, 50);
+            this.lbFruitDescription.Name = "lbFruitDescription";
+            this.lbFruitDescription.Size = new System.Drawing.Size(200, 50);
+            this.lbFruitDescription.TabIndex = 6;
+            this.lbFruitDescription.Text = "Fruit Description";
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(728, 80);
+            this.btnStart.MaximumSize = new System.Drawing.Size(100, 50);
+            this.btnStart.MinimumSize = new System.Drawing.Size(100, 50);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(100, 50);
+            this.btnStart.TabIndex = 7;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            // 
+            // lbScore
+            // 
+            this.lbScore.AutoSize = true;
+            this.lbScore.Location = new System.Drawing.Point(396, 12);
+            this.lbScore.MinimumSize = new System.Drawing.Size(100, 50);
+            this.lbScore.Name = "lbScore";
+            this.lbScore.Size = new System.Drawing.Size(100, 50);
+            this.lbScore.TabIndex = 8;
+            this.lbScore.Text = "Score: ";
+            this.lbScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbBestScore
+            // 
+            this.lbBestScore.AutoSize = true;
+            this.lbBestScore.Location = new System.Drawing.Point(5, 290);
+            this.lbBestScore.MinimumSize = new System.Drawing.Size(100, 50);
+            this.lbBestScore.Name = "lbBestScore";
+            this.lbBestScore.Size = new System.Drawing.Size(100, 50);
+            this.lbBestScore.TabIndex = 9;
+            this.lbBestScore.Text = "Best score:";
+            this.lbBestScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BestScoreContainer
+            // 
+            this.BestScoreContainer.AutoSize = true;
+            this.BestScoreContainer.Location = new System.Drawing.Point(96, 309);
+            this.BestScoreContainer.Name = "BestScoreContainer";
+            this.BestScoreContainer.Size = new System.Drawing.Size(13, 13);
+            this.BestScoreContainer.TabIndex = 10;
+            this.BestScoreContainer.Text = "0";
+            // 
+            // CurrentScore
+            // 
+            this.CurrentScore.AutoSize = true;
+            this.CurrentScore.Location = new System.Drawing.Point(469, 31);
+            this.CurrentScore.Name = "CurrentScore";
+            this.CurrentScore.Size = new System.Drawing.Size(13, 13);
+            this.CurrentScore.TabIndex = 11;
+            this.CurrentScore.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 694);
+            this.ClientSize = new System.Drawing.Size(904, 694);
+            this.Controls.Add(this.CurrentScore);
+            this.Controls.Add(this.BestScoreContainer);
+            this.Controls.Add(this.lbBestScore);
+            this.Controls.Add(this.lbScore);
+            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.lbFruitDescription);
+            this.Controls.Add(this.lbCurrentFruit);
+            this.Controls.Add(this.lbDifficulty);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.board);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -176,8 +268,15 @@
         private System.Windows.Forms.Panel snake;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer ticker;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbDifficulty;
+        private System.Windows.Forms.Label lbCurrentFruit;
+        private System.Windows.Forms.Label lbFruitDescription;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Label lbScore;
+        private System.Windows.Forms.Label lbBestScore;
+        private System.Windows.Forms.Label BestScoreContainer;
+        private System.Windows.Forms.Label CurrentScore;
     }
 }
 
