@@ -49,6 +49,19 @@ namespace SnakeMan
             BestScoreCounter = Saves.ReadBestScore();
             BestScoreContainer.Text = BestScoreCounter.ToString();
 
+            if(ticker.Interval == 400)
+            {
+                lbDifficulty.Text += "Easy";
+            }
+            else if(ticker.Interval == 100)
+            {
+                lbDifficulty.Text += "Normal";
+            }
+            else if(ticker.Interval == 50)
+            {
+                lbDifficulty.Text += "Hard";
+            }
+
 
             //fisrt fruit generation
             CurrentFruit = FruitGenerator.FGen(snake,board, FruitCounter);
