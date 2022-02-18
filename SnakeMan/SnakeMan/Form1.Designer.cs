@@ -38,7 +38,6 @@
             this.lbDifficulty = new System.Windows.Forms.Label();
             this.lbCurrentFruit = new System.Windows.Forms.Label();
             this.lbFruitDescription = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
             this.lbScore = new System.Windows.Forms.Label();
             this.lbBestScore = new System.Windows.Forms.Label();
             this.BestScoreContainer = new System.Windows.Forms.Label();
@@ -183,17 +182,6 @@
             this.lbFruitDescription.TabIndex = 6;
             this.lbFruitDescription.Text = "Fruit Description";
             // 
-            // btnStart
-            // 
-            this.btnStart.Location = new System.Drawing.Point(728, 80);
-            this.btnStart.MaximumSize = new System.Drawing.Size(100, 50);
-            this.btnStart.MinimumSize = new System.Drawing.Size(100, 50);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(100, 50);
-            this.btnStart.TabIndex = 7;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            // 
             // lbScore
             // 
             this.lbScore.AutoSize = true;
@@ -243,7 +231,6 @@
             this.Controls.Add(this.BestScoreContainer);
             this.Controls.Add(this.lbBestScore);
             this.Controls.Add(this.lbScore);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lbFruitDescription);
             this.Controls.Add(this.lbCurrentFruit);
             this.Controls.Add(this.lbDifficulty);
@@ -272,7 +259,6 @@
         private System.Windows.Forms.Label lbDifficulty;
         private System.Windows.Forms.Label lbCurrentFruit;
         private System.Windows.Forms.Label lbFruitDescription;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lbScore;
         private System.Windows.Forms.Label lbBestScore;
         private System.Windows.Forms.Label BestScoreContainer;

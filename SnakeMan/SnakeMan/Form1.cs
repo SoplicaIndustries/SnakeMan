@@ -43,7 +43,6 @@ namespace SnakeMan
             //start settings
             Direction = "up";
             button1.TabStop = false;
-            btnStart.TabStop = false;
             Tail = new List<Panel>();
             ScoreCounter = 0;
             CurrentScore.Text = ScoreCounter.ToString();
@@ -63,7 +62,7 @@ namespace SnakeMan
             
             if(controlls.BoardCollision(snake, board) || controlls.TailCollision(snake, board, Tail, Direction))
             {
-                lbScore.Text = "you lost";
+                
                 Direction = "clear";
                 controlls.Movement(snake, board, Direction);
                 FruitCounter = 1;
@@ -73,9 +72,12 @@ namespace SnakeMan
                     board.Controls.Remove(Tail[i]);
                 }
                 Tail.Clear();
+                board.Controls.Remove(CurrentFruit);
+                CurrentFruit = null;
+                CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
 
                 ScoreCounter = 0;
-            CurrentScore.Text = ScoreCounter.ToString();
+                CurrentScore.Text = ScoreCounter.ToString();
                
             }
             else
