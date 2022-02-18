@@ -79,8 +79,9 @@ namespace SnakeMan
                     CurrentFruit = FruitGenerator.FGen(snake, board, FruitCounter);
                     FruitCounter++;
 
-                    //tail handler
-                    controlls.TailHandler(snake, board, TailCounter, Tail, Direction);
+                    //buff handler
+
+                    FruitEvent.TailHandler(snake, board, TailCounter, Tail, Direction);
                     TailCounter++;
                 }
                 controlls.Movement(snake, board, Direction);
