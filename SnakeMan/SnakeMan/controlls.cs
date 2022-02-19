@@ -116,12 +116,21 @@ namespace SnakeMan
             }
         }
 
-        public static bool FruitCollision(Panel snake,TableLayoutPanel board, Panel fruit, string direction)
+        public static bool FruitCollision(Panel snake,TableLayoutPanel board, Panel fruit,List<Panel> Tail, string direction)
         {
             if (fruit != null)
             {
                 var snakePos = board.GetCellPosition(snake);
                 var fruitPos = board.GetCellPosition(fruit);
+
+                foreach(var element in Tail)
+                {
+                    var tailPos = board.GetCellPosition(element);
+                    if(tailPos == fruitPos)
+                    {
+                        return true;
+                    }
+                }
 
                 if (snakePos.Column == (fruitPos.Column-1) && snakePos.Row == fruitPos.Row && direction =="right")
                 {

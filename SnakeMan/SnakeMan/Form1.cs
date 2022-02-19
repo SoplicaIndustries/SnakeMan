@@ -64,7 +64,8 @@ namespace SnakeMan
 
 
             //fisrt fruit generation
-            CurrentFruit = FruitGenerator.FGen(snake, board, Tail, FruitCounter) ;
+            CurrentFruit = FruitGenerator.FGen(snake, board, Tail, FruitCounter);
+            lbCurrentFruitContainer.Text = CurrentFruit.Name;
 
 
 
@@ -94,11 +95,12 @@ namespace SnakeMan
                
             }
             else
-            {   if(controlls.FruitCollision(snake, board, CurrentFruit, Direction))
+            {   if(controlls.FruitCollision(snake, board, CurrentFruit,Tail, Direction))
                 {
                     //fruit handler
                     board.Controls.Remove(CurrentFruit);
                     CurrentFruit = FruitGenerator.FGen(snake, board,Tail, FruitCounter);
+                    lbCurrentFruitContainer.Text = CurrentFruit.Name;
                     FruitCounter++;
 
                     //score handler
@@ -161,9 +163,10 @@ namespace SnakeMan
             ticker.Interval = 1000;
         }
 
-        
+        private void lbCurrentFruitContainer_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 
     
