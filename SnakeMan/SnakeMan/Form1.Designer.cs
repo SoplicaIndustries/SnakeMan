@@ -34,7 +34,6 @@
             this.snake = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ticker = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.lbDifficulty = new System.Windows.Forms.Label();
             this.lbCurrentFruit = new System.Windows.Forms.Label();
             this.lbFruitDescription = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.lbFruitType = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tc = new System.Windows.Forms.Label();
             this.board.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -147,17 +145,6 @@
             // 
             this.ticker.Tick += new System.EventHandler(this.ticker_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1089, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // lbDifficulty
             // 
             this.lbDifficulty.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -246,7 +233,7 @@
             this.lbCurrentFruitContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCurrentFruitContainer.AutoSize = true;
             this.lbCurrentFruitContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentFruitContainer.Location = new System.Drawing.Point(177, 0);
+            this.lbCurrentFruitContainer.Location = new System.Drawing.Point(167, 0);
             this.lbCurrentFruitContainer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCurrentFruitContainer.MaximumSize = new System.Drawing.Size(150, 40);
             this.lbCurrentFruitContainer.MinimumSize = new System.Drawing.Size(150, 40);
@@ -291,26 +278,15 @@
             this.panel3.Size = new System.Drawing.Size(280, 276);
             this.panel3.TabIndex = 15;
             // 
-            // tc
-            // 
-            this.tc.AutoSize = true;
-            this.tc.Location = new System.Drawing.Point(834, 38);
-            this.tc.Name = "tc";
-            this.tc.Size = new System.Drawing.Size(44, 16);
-            this.tc.TabIndex = 16;
-            this.tc.Text = "label2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 854);
-            this.Controls.Add(this.tc);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CurrentScore);
             this.Controls.Add(this.lbScore);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.board);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -337,7 +313,6 @@
         private System.Windows.Forms.Panel snake;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer ticker;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbDifficulty;
         private System.Windows.Forms.Label lbCurrentFruit;
         private System.Windows.Forms.Label lbFruitDescription;
@@ -349,7 +324,6 @@
         private System.Windows.Forms.Label lbFruitType;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label tc;
     }
 }
 

@@ -42,7 +42,7 @@ namespace SnakeMan
 
             //start settings
             Direction = "up";
-            button1.TabStop = false;
+            
             Tail = new List<Panel>();
             ScoreCounter = 0;
             CurrentScore.Text = ScoreCounter.ToString();
@@ -115,7 +115,7 @@ namespace SnakeMan
                         BestScoreContainer.Text = ScoreCounter.ToString();
                         Saves.SaveBestScore(BestScoreCounter);
                     }
-                    tc.Text = TailCounter.ToString();
+                    
 
                     
                     
