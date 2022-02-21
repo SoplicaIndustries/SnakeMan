@@ -16,7 +16,7 @@ namespace SnakeMan
                 TailHandler(snake, board, Form1.TailCounter, Tail, direction);
                 Form1.TailCounter++;
             }
-            if(fruitName == "Gomu-Gomu")
+            if(fruitName == "Black berry")
             {
                 for (int i = 0; i < 2; i++)
                 {
@@ -25,6 +25,17 @@ namespace SnakeMan
                 }
                 
 
+            }
+            if(fruitName == "Banana")
+            {
+                for(int i = 1; i <= 2 ; i++)
+                {
+                    var tailNum = Tail.Count-1;
+                    board.Controls.Remove(Tail[tailNum]);
+                    Tail.RemoveAt(tailNum);
+                    Form1.TailCounter--;
+                    
+                }
             }
         }
 

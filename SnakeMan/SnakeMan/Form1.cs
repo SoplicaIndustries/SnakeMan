@@ -97,6 +97,9 @@ namespace SnakeMan
             else
             {   if(controlls.FruitCollision(snake, board, CurrentFruit,Tail, Direction))
                 {
+                    //buff handler
+                    FruitEvent.FruitEventHandler(snake, board, TailCounter, Tail, Direction, CurrentFruit.Name);
+
                     //fruit handler
                     board.Controls.Remove(CurrentFruit);
                     CurrentFruit = FruitGenerator.FGen(snake, board,Tail, FruitCounter);
@@ -112,9 +115,9 @@ namespace SnakeMan
                         BestScoreContainer.Text = ScoreCounter.ToString();
                         Saves.SaveBestScore(BestScoreCounter);
                     }
+                    tc.Text = TailCounter.ToString();
 
-                    //buff handler
-                    FruitEvent.FruitEventHandler(snake, board, TailCounter, Tail, Direction, CurrentFruit.Name);
+                    
                     
                 }
                 controlls.Movement(snake, board, Direction);
@@ -160,7 +163,7 @@ namespace SnakeMan
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ticker.Interval = 1000;
+            FruitGenerator.FGen(snake, board, Tail, TailCounter);
         }
 
         private void lbCurrentFruitContainer_Click(object sender, EventArgs e)

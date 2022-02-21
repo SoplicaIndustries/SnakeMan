@@ -46,6 +46,7 @@
             this.lbFruitType = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tc = new System.Windows.Forms.Label();
             this.board.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,7 +75,7 @@
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
@@ -83,7 +84,7 @@
             this.board.Controls.Add(this.label1, 0, 0);
             this.board.Controls.Add(this.snake, 9, 9);
             this.board.Location = new System.Drawing.Point(340, 105);
-            this.board.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.board.Margin = new System.Windows.Forms.Padding(4);
             this.board.Name = "board";
             this.board.RowCount = 20;
             this.board.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -128,7 +129,7 @@
             this.snake.BackColor = System.Drawing.Color.Black;
             this.snake.Dock = System.Windows.Forms.DockStyle.Fill;
             this.snake.Location = new System.Drawing.Point(239, 221);
-            this.snake.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.snake.Margin = new System.Windows.Forms.Padding(4);
             this.snake.Name = "snake";
             this.snake.Size = new System.Drawing.Size(19, 17);
             this.snake.TabIndex = 2;
@@ -137,7 +138,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(91, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 1);
             this.panel1.TabIndex = 1;
@@ -149,7 +150,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1089, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -290,11 +291,21 @@
             this.panel3.Size = new System.Drawing.Size(280, 276);
             this.panel3.TabIndex = 15;
             // 
+            // tc
+            // 
+            this.tc.AutoSize = true;
+            this.tc.Location = new System.Drawing.Point(834, 38);
+            this.tc.Name = "tc";
+            this.tc.Size = new System.Drawing.Size(44, 16);
+            this.tc.TabIndex = 16;
+            this.tc.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 854);
+            this.Controls.Add(this.tc);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CurrentScore);
@@ -302,8 +313,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.board);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -337,6 +349,7 @@
         private System.Windows.Forms.Label lbFruitType;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label tc;
     }
 }
 
