@@ -64,11 +64,19 @@ namespace SnakeMan
             else
             {
 
-            var res = JsonConvert.DeserializeObject<List<ScoreResult>>(fromJSON);
+                var res = JsonConvert.DeserializeObject<List<ScoreResult>>(fromJSON);
+                resultsFromFile = res;
+
+                foreach (ScoreResult result in res)
+                {
+                    if(result.Difficulty.ToLowerInvariant() == difficulty.ToLowerInvariant())
+                    {
+                        return result.Score;
+                    }
+                }
 
                 
 
-                resultsFromFile = res;
             }
             return 0;
             
