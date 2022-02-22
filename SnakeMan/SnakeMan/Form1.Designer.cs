@@ -45,6 +45,7 @@
             this.lbFruitType = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TypeContainer = new System.Windows.Forms.Label();
             this.board.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -249,9 +250,10 @@
             this.lbFruitType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFruitType.Location = new System.Drawing.Point(-6, 40);
             this.lbFruitType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbFruitType.MinimumSize = new System.Drawing.Size(267, 62);
+            this.lbFruitType.MaximumSize = new System.Drawing.Size(100, 62);
+            this.lbFruitType.MinimumSize = new System.Drawing.Size(100, 62);
             this.lbFruitType.Name = "lbFruitType";
-            this.lbFruitType.Size = new System.Drawing.Size(267, 62);
+            this.lbFruitType.Size = new System.Drawing.Size(100, 62);
             this.lbFruitType.TabIndex = 13;
             this.lbFruitType.Text = "Type: ";
             // 
@@ -269,6 +271,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.Controls.Add(this.TypeContainer);
             this.panel3.Controls.Add(this.lbCurrentFruitContainer);
             this.panel3.Controls.Add(this.lbCurrentFruit);
             this.panel3.Controls.Add(this.lbFruitType);
@@ -277,6 +280,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(280, 276);
             this.panel3.TabIndex = 15;
+            // 
+            // TypeContainer
+            // 
+            this.TypeContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TypeContainer.AutoSize = true;
+            this.TypeContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TypeContainer.Location = new System.Drawing.Point(76, 40);
+            this.TypeContainer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TypeContainer.MaximumSize = new System.Drawing.Size(200, 62);
+            this.TypeContainer.MinimumSize = new System.Drawing.Size(200, 62);
+            this.TypeContainer.Name = "TypeContainer";
+            this.TypeContainer.Size = new System.Drawing.Size(200, 62);
+            this.TypeContainer.TabIndex = 14;
             // 
             // Form1
             // 
@@ -324,6 +340,7 @@
         private System.Windows.Forms.Label lbFruitType;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label TypeContainer;
     }
 }
 

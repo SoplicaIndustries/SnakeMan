@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,39 +7,81 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace SnakeMan
 {
     class Saves
     {
+        private static List<ScoreResult> resultsFromFile { get; set; }  
         private static int BS { get; set; }
-        private static string FileName { get; set; } = "bs.txt";
+        private static string FileName { get; set; } = "bs.json";
 
-        public static void SaveBestScore(int bestScore)
+        public static void SaveBestScore(string difficulty, int score, DateTime currDate)
         {
-            BS = bestScore;
+
+                for (int i = 0; i < resultsFromFile.Count; i++)
+                {
+                    var result = resultsFromFile[i];
+                    if (result.Difficulty.ToLowerInvariant() == difficulty.ToLowerInvariant())
+                    {
+                        resultsFromFile[i].Score = score;
+                        resultsFromFile[i].ScoreDate = currDate;
+                    }
+                }
+
+                
+
+                string jsonData = JsonConvert.SerializeObject(resultsFromFile);
+
+                File.WriteAllText(FileName, jsonData);
+                
+            
+        }
+
+        public static int ReadBestScore(string difficulty)
+        {
+            
+            var fromJSON = File.ReadAllText(FileName);
+
+            if (fromJSON.Count() == 0)
+            {
+                List<ScoreResult> empty = new List<ScoreResult>
+                {
+                    new ScoreResult{Difficulty = "Easy", Score = 0, ScoreDate = new DateTime() },
+                     new ScoreResult{Difficulty = "Normal", Score = 0, ScoreDate = new DateTime() },
+                      new ScoreResult{Difficulty = "Hard", Score = 0, ScoreDate = new DateTime() }
+                };
+
+                string emptyJSON = JsonConvert.SerializeObject(empty);
+                File.WriteAllText(FileName, emptyJSON);
+                ReadBestScore(difficulty);
+                
+
+                return 0;
+
+            }
+            else
+            {
+
+            var res = JsonConvert.DeserializeObject<List<ScoreResult>>(fromJSON);
+
+                
+
+                resultsFromFile = res;
+            }
+            return 0;
             
 
-            using (StreamWriter tw = new StreamWriter(FileName, false))
-            {
-                tw.WriteLine(BS.ToString());
-            }
         }
+    }
 
-        public static int ReadBestScore()
-        {
-            int bestScore = 0;
-            using (StreamReader sr = new StreamReader(FileName))
-            {
-                string line = "";
-                while ((line = sr.ReadLine()) != null)
-                {
-                    if (line.Trim().Length == 0) continue;
-                    bestScore += Convert.ToInt32(line);
-                }
-            }
+    class ScoreResult
+    {
+        public String Difficulty { get; set; }
 
-            return bestScore;
+        public int Score { get; set; }
 
-        }
+        public DateTime ScoreDate { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace SnakeMan
 
     public partial class Form1 : Form
     {
+        public string Difficulty { get; set; }
         public string Direction { get; set; }
         public int FruitCounter { get; set; } = 1;
         public static int TailCounter { get; set; } = 0;
@@ -46,26 +47,17 @@ namespace SnakeMan
             Tail = new List<Panel>();
             ScoreCounter = 0;
             CurrentScore.Text = ScoreCounter.ToString();
-            BestScoreCounter = Saves.ReadBestScore();
+            BestScoreCounter = Saves.ReadBestScore(difficulty);
             BestScoreContainer.Text = BestScoreCounter.ToString();
 
-            if(ticker.Interval == 400)
-            {
-                lbDifficulty.Text += "Easy";
-            }
-            else if(ticker.Interval == 100)
-            {
-                lbDifficulty.Text += "Normal";
-            }
-            else if(ticker.Interval == 50)
-            {
-                lbDifficulty.Text += "Hard";
-            }
+            Difficulty = difficulty;
+            lbDifficulty.Text += Difficulty;
 
 
             //fisrt fruit generation
             CurrentFruit = FruitGenerator.FGen(snake, board, Tail, FruitCounter);
             lbCurrentFruitContainer.Text = CurrentFruit.Name;
+            TypeContainer.Text = CurrentFruit.AccessibleDescription;
 
 
 
@@ -104,6 +96,7 @@ namespace SnakeMan
                     board.Controls.Remove(CurrentFruit);
                     CurrentFruit = FruitGenerator.FGen(snake, board,Tail, FruitCounter);
                     lbCurrentFruitContainer.Text = CurrentFruit.Name;
+                    TypeContainer.Text = CurrentFruit.AccessibleDescription;
                     FruitCounter++;
 
                     //score handler
@@ -113,7 +106,7 @@ namespace SnakeMan
                     {
                         BestScoreCounter = ScoreCounter;
                         BestScoreContainer.Text = ScoreCounter.ToString();
-                        Saves.SaveBestScore(BestScoreCounter);
+                        Saves.SaveBestScore(Difficulty, BestScoreCounter, DateTime.Now);
                     }
                     
 
