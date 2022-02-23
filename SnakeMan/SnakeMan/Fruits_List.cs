@@ -14,7 +14,7 @@ namespace SnakeMan
             return new List<Panel>
             {
                 new Panel{Name = "Apple", BackColor=System.Drawing.Color.Red, AccessibleDescription = "Normal"},
-                new Panel{Name = "Black berry", BackColor = System.Drawing.Color.Purple, AccessibleDescription = "Debuff"},
+                new Panel{Name = "Berry", BackColor = System.Drawing.Color.Purple, AccessibleDescription = "Debuff"},
                 new Panel{Name = "Banana", BackColor = System.Drawing.Color.Yellow, AccessibleDescription = "Buff"}
 
             };

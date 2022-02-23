@@ -16,7 +16,7 @@ namespace SnakeMan
                 TailHandler(snake, board, Form1.TailCounter, Tail, direction);
                 Form1.TailCounter++;
             }
-            if(fruitName == "Black berry")
+            if(fruitName == "Berry")
             {
                 for (int i = 0; i < 2; i++)
                 {
