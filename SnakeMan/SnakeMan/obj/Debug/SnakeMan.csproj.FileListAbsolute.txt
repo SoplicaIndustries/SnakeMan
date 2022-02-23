@@ -20,7 +20,6 @@ C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.CoreCompileInputs.
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.exe
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.pdb
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Menu.resources
-C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Rules.resources
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.AssemblyReference.cache
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\System.Buffers.dll
@@ -41,3 +40,5 @@ C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\System.ValueTuple.xml
 C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.csproj.CopyComplete
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\Newtonsoft.Json.dll
 C:\repos\SnakeMan\SnakeMan\SnakeMan\bin\Debug\Newtonsoft.Json.xml
+C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.Information.resources
+C:\repos\SnakeMan\SnakeMan\SnakeMan\obj\Debug\SnakeMan.ScoreTable.resources

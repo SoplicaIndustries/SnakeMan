@@ -13,7 +13,7 @@ namespace SnakeMan
 {
     class Saves
     {
-        private static List<ScoreResult> resultsFromFile { get; set; }  
+        public static List<ScoreResult> resultsFromFile { get; set; }  
         private static int BS { get; set; }
         private static string FileName { get; set; } = "bs.json";
 
@@ -69,13 +69,15 @@ namespace SnakeMan
 
                 foreach (ScoreResult result in res)
                 {
-                    if(result.Difficulty.ToLowerInvariant() == difficulty.ToLowerInvariant())
+                    if(difficulty == null)
+                    {
+                        return 0;
+                    }
+                    else if(result.Difficulty.ToLowerInvariant() == difficulty.ToLowerInvariant())
                     {
                         return result.Score;
                     }
                 }
-
-                
 
             }
             return 0;

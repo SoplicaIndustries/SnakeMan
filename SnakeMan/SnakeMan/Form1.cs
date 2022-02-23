@@ -49,6 +49,8 @@ namespace SnakeMan
             CurrentScore.Text = ScoreCounter.ToString();
             BestScoreCounter = Saves.ReadBestScore(difficulty);
             BestScoreContainer.Text = BestScoreCounter.ToString();
+            button2.TabStop = false;
+            button3.TabStop = false;
 
             Difficulty = difficulty;
             lbDifficulty.Text += Difficulty;
@@ -57,7 +59,7 @@ namespace SnakeMan
             //fisrt fruit generation
             CurrentFruit = FruitGenerator.FGen(snake, board, Tail, FruitCounter);
             lbCurrentFruitContainer.Text = CurrentFruit.Name;
-            TypeContainer.Text = CurrentFruit.AccessibleDescription;
+            lbTypeCon.Text = CurrentFruit.AccessibleDescription;
 
 
 
@@ -96,7 +98,7 @@ namespace SnakeMan
                     board.Controls.Remove(CurrentFruit);
                     CurrentFruit = FruitGenerator.FGen(snake, board,Tail, FruitCounter);
                     lbCurrentFruitContainer.Text = CurrentFruit.Name;
-                    TypeContainer.Text = CurrentFruit.AccessibleDescription;
+                    lbTypeCon.Text = CurrentFruit.AccessibleDescription;
                     FruitCounter++;
 
                     //score handler
@@ -162,6 +164,11 @@ namespace SnakeMan
         private void lbCurrentFruitContainer_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 

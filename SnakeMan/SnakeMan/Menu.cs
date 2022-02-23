@@ -62,7 +62,12 @@ namespace SnakeMan
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new Rules().ShowDialog();
+            new Information().ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new ScoreTable().ShowDialog();
         }
     }
 }

@@ -36,7 +36,6 @@
             this.ticker = new System.Windows.Forms.Timer(this.components);
             this.lbDifficulty = new System.Windows.Forms.Label();
             this.lbCurrentFruit = new System.Windows.Forms.Label();
-            this.lbFruitDescription = new System.Windows.Forms.Label();
             this.lbScore = new System.Windows.Forms.Label();
             this.lbBestScore = new System.Windows.Forms.Label();
             this.BestScoreContainer = new System.Windows.Forms.Label();
@@ -45,7 +44,9 @@
             this.lbFruitType = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.TypeContainer = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lbTypeCon = new System.Windows.Forms.Label();
             this.board.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,7 +83,7 @@
             this.board.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.board.Controls.Add(this.label1, 0, 0);
             this.board.Controls.Add(this.snake, 9, 9);
-            this.board.Location = new System.Drawing.Point(340, 105);
+            this.board.Location = new System.Drawing.Point(377, 78);
             this.board.Margin = new System.Windows.Forms.Padding(4);
             this.board.Name = "board";
             this.board.RowCount = 20;
@@ -151,7 +152,7 @@
             this.lbDifficulty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbDifficulty.AutoSize = true;
             this.lbDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDifficulty.Location = new System.Drawing.Point(-6, 0);
+            this.lbDifficulty.Location = new System.Drawing.Point(1, 16);
             this.lbDifficulty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDifficulty.MinimumSize = new System.Drawing.Size(267, 62);
             this.lbDifficulty.Name = "lbDifficulty";
@@ -164,7 +165,7 @@
             this.lbCurrentFruit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCurrentFruit.AutoSize = true;
             this.lbCurrentFruit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentFruit.Location = new System.Drawing.Point(-6, 0);
+            this.lbCurrentFruit.Location = new System.Drawing.Point(1, 0);
             this.lbCurrentFruit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCurrentFruit.MinimumSize = new System.Drawing.Size(180, 30);
             this.lbCurrentFruit.Name = "lbCurrentFruit";
@@ -172,27 +173,15 @@
             this.lbCurrentFruit.TabIndex = 5;
             this.lbCurrentFruit.Text = "Current Fruit: ";
             // 
-            // lbFruitDescription
-            // 
-            this.lbFruitDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbFruitDescription.AutoSize = true;
-            this.lbFruitDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFruitDescription.Location = new System.Drawing.Point(-6, 102);
-            this.lbFruitDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbFruitDescription.MinimumSize = new System.Drawing.Size(267, 62);
-            this.lbFruitDescription.Name = "lbFruitDescription";
-            this.lbFruitDescription.Size = new System.Drawing.Size(267, 62);
-            this.lbFruitDescription.TabIndex = 6;
-            this.lbFruitDescription.Text = "Fruit Description";
-            // 
             // lbScore
             // 
             this.lbScore.AutoSize = true;
-            this.lbScore.Location = new System.Drawing.Point(528, 15);
+            this.lbScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbScore.Location = new System.Drawing.Point(4, 78);
             this.lbScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbScore.MinimumSize = new System.Drawing.Size(133, 62);
+            this.lbScore.MinimumSize = new System.Drawing.Size(103, 62);
             this.lbScore.Name = "lbScore";
-            this.lbScore.Size = new System.Drawing.Size(133, 62);
+            this.lbScore.Size = new System.Drawing.Size(103, 62);
             this.lbScore.TabIndex = 8;
             this.lbScore.Text = "Score: ";
             this.lbScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,11 +189,12 @@
             // lbBestScore
             // 
             this.lbBestScore.AutoSize = true;
-            this.lbBestScore.Location = new System.Drawing.Point(-3, 62);
+            this.lbBestScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBestScore.Location = new System.Drawing.Point(4, 154);
             this.lbBestScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBestScore.MinimumSize = new System.Drawing.Size(133, 62);
             this.lbBestScore.Name = "lbBestScore";
-            this.lbBestScore.Size = new System.Drawing.Size(133, 62);
+            this.lbBestScore.Size = new System.Drawing.Size(155, 62);
             this.lbBestScore.TabIndex = 9;
             this.lbBestScore.Text = "Best score:";
             this.lbBestScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,20 +202,22 @@
             // BestScoreContainer
             // 
             this.BestScoreContainer.AutoSize = true;
-            this.BestScoreContainer.Location = new System.Drawing.Point(150, 85);
+            this.BestScoreContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BestScoreContainer.Location = new System.Drawing.Point(189, 170);
             this.BestScoreContainer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BestScoreContainer.Name = "BestScoreContainer";
-            this.BestScoreContainer.Size = new System.Drawing.Size(14, 16);
+            this.BestScoreContainer.Size = new System.Drawing.Size(30, 32);
             this.BestScoreContainer.TabIndex = 10;
             this.BestScoreContainer.Text = "0";
             // 
             // CurrentScore
             // 
             this.CurrentScore.AutoSize = true;
-            this.CurrentScore.Location = new System.Drawing.Point(625, 38);
+            this.CurrentScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentScore.Location = new System.Drawing.Point(189, 94);
             this.CurrentScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CurrentScore.Name = "CurrentScore";
-            this.CurrentScore.Size = new System.Drawing.Size(14, 16);
+            this.CurrentScore.Size = new System.Drawing.Size(30, 32);
             this.CurrentScore.TabIndex = 11;
             this.CurrentScore.Text = "0";
             // 
@@ -234,7 +226,7 @@
             this.lbCurrentFruitContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCurrentFruitContainer.AutoSize = true;
             this.lbCurrentFruitContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentFruitContainer.Location = new System.Drawing.Point(167, 0);
+            this.lbCurrentFruitContainer.Location = new System.Drawing.Point(9, 31);
             this.lbCurrentFruitContainer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCurrentFruitContainer.MaximumSize = new System.Drawing.Size(150, 40);
             this.lbCurrentFruitContainer.MinimumSize = new System.Drawing.Size(150, 40);
@@ -248,7 +240,7 @@
             this.lbFruitType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbFruitType.AutoSize = true;
             this.lbFruitType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFruitType.Location = new System.Drawing.Point(-6, 40);
+            this.lbFruitType.Location = new System.Drawing.Point(1, 83);
             this.lbFruitType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFruitType.MaximumSize = new System.Drawing.Size(100, 62);
             this.lbFruitType.MinimumSize = new System.Drawing.Size(100, 62);
@@ -262,47 +254,71 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.lbDifficulty);
             this.panel2.Controls.Add(this.BestScoreContainer);
+            this.panel2.Controls.Add(this.CurrentScore);
             this.panel2.Controls.Add(this.lbBestScore);
-            this.panel2.Location = new System.Drawing.Point(27, 15);
+            this.panel2.Controls.Add(this.lbScore);
+            this.panel2.Location = new System.Drawing.Point(12, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 307);
+            this.panel2.Size = new System.Drawing.Size(280, 230);
             this.panel2.TabIndex = 14;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel3.Controls.Add(this.TypeContainer);
+            this.panel3.Controls.Add(this.lbTypeCon);
             this.panel3.Controls.Add(this.lbCurrentFruitContainer);
             this.panel3.Controls.Add(this.lbCurrentFruit);
             this.panel3.Controls.Add(this.lbFruitType);
-            this.panel3.Controls.Add(this.lbFruitDescription);
-            this.panel3.Location = new System.Drawing.Point(27, 348);
+            this.panel3.Location = new System.Drawing.Point(12, 395);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(280, 276);
+            this.panel3.Size = new System.Drawing.Size(280, 175);
             this.panel3.TabIndex = 15;
             // 
-            // TypeContainer
+            // button2
             // 
-            this.TypeContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TypeContainer.AutoSize = true;
-            this.TypeContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TypeContainer.Location = new System.Drawing.Point(76, 40);
-            this.TypeContainer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TypeContainer.MaximumSize = new System.Drawing.Size(200, 62);
-            this.TypeContainer.MinimumSize = new System.Drawing.Size(200, 62);
-            this.TypeContainer.Name = "TypeContainer";
-            this.TypeContainer.Size = new System.Drawing.Size(200, 62);
-            this.TypeContainer.TabIndex = 14;
+            this.button2.BackgroundImage = global::SnakeMan.Properties.Resources.exit_14;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(77, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(53, 49);
+            this.button2.TabIndex = 16;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::SnakeMan.Properties.Resources.about_us_icon_34429;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(138, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(53, 49);
+            this.button3.TabIndex = 17;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // lbTypeCon
+            // 
+            this.lbTypeCon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTypeCon.AutoSize = true;
+            this.lbTypeCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTypeCon.Location = new System.Drawing.Point(9, 114);
+            this.lbTypeCon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTypeCon.MaximumSize = new System.Drawing.Size(200, 62);
+            this.lbTypeCon.MinimumSize = new System.Drawing.Size(200, 30);
+            this.lbTypeCon.Name = "lbTypeCon";
+            this.lbTypeCon.Size = new System.Drawing.Size(200, 31);
+            this.lbTypeCon.TabIndex = 15;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 854);
+            this.ClientSize = new System.Drawing.Size(1205, 653);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.CurrentScore);
-            this.Controls.Add(this.lbScore);
             this.Controls.Add(this.board);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -318,7 +334,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -331,7 +346,6 @@
         private System.Windows.Forms.Timer ticker;
         private System.Windows.Forms.Label lbDifficulty;
         private System.Windows.Forms.Label lbCurrentFruit;
-        private System.Windows.Forms.Label lbFruitDescription;
         private System.Windows.Forms.Label lbScore;
         private System.Windows.Forms.Label lbBestScore;
         private System.Windows.Forms.Label BestScoreContainer;
@@ -340,7 +354,9 @@
         private System.Windows.Forms.Label lbFruitType;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label TypeContainer;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbTypeCon;
     }
 }
 

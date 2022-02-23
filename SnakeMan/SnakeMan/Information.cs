@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SnakeMan
 {
-    public partial class Rules : Form
+    public partial class Information : Form
     {
-        public Rules()
+        public Information()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
